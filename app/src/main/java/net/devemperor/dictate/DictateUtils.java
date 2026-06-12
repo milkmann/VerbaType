@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
 public class DictateUtils {
 
     public static final String PROMPT_PUNCTUATION_CAPITALIZATION = "This sentence has capitalization and punctuation.";
-    public static final String PROMPT_REWORDING_BE_PRECISE = "Be accurate with your output. Only output exactly what the user has asked for above. Do not add any text before or after the actual output. Output the text in the language of the instruction, unless a different language was explicitly requested.";
+    public static final String PROMPT_REWORDING_BE_PRECISE = "Be accurate with your output. Only output exactly what the user has asked for. Do not add any conversational filler, greetings, explanations, or meta-comments before or after the actual output. Do not wrap the output in quotes or markdown code blocks (fences) unless explicitly requested. Output the text in the language of the instruction, unless a different language was explicitly requested.";
     private static final Map<String, String> PROMPT_PUNCTUATION_CAPITALIZATION_BY_LANGUAGE;
 
     static {
