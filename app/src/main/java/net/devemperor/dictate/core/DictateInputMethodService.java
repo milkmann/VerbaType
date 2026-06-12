@@ -1553,7 +1553,6 @@ public class DictateInputMethodService extends InputMethodService {
                     resultText = applyAutoFormattingIfEnabled(resultText);
                 } else {
                     clearQueuedPrompts();
-                    livePrompt = false;
                 }
 
                 usageDb.edit(transcriptionModel, DictateUtils.getAudioDuration(audioFile), 0, 0, transcriptionProvider);

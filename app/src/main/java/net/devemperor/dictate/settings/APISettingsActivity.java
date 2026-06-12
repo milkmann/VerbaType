@@ -37,6 +37,7 @@ public class APISettingsActivity extends AppCompatActivity {
     private EditText rewordingCustomHostEt;
     private EditText rewordingCustomModelEt;
     private LinearLayout transcriptionCustomFieldsWrapper;
+    private LinearLayout transcriptionCustomPromptGroup;
     private LinearLayout rewordingCustomFieldsWrapper;
     private com.google.android.material.materialswitch.MaterialSwitch disableRewordingForMultimodalSwitch;
     private boolean disableRewordingForMultimodal;
@@ -110,6 +111,7 @@ public class APISettingsActivity extends AppCompatActivity {
         rewordingCustomHostEt = findViewById(R.id.api_settings_rewording_custom_host_et);
         rewordingCustomModelEt = findViewById(R.id.api_settings_rewording_custom_model_et);
         transcriptionCustomFieldsWrapper = findViewById(R.id.api_settings_transcription_custom_fields_wrapper);
+        transcriptionCustomPromptGroup = findViewById(R.id.transcription_custom_prompt_group);
         rewordingCustomFieldsWrapper = findViewById(R.id.api_settings_rewording_custom_fields_wrapper);
 
 
@@ -318,6 +320,9 @@ public class APISettingsActivity extends AppCompatActivity {
     private void updateTranscriptionModels(int position) {
         ignoreTextChange = true;
         transcriptionCustomFieldsWrapper.setVisibility((position == 2 || position == 3) ? View.VISIBLE : View.GONE);
+        if (transcriptionCustomPromptGroup != null) {
+            transcriptionCustomPromptGroup.setVisibility(position == 3 ? View.VISIBLE : View.GONE);
+        }
         transcriptionModelSpn.setEnabled(position != 2 && position != 3);
         if (disableRewordingForMultimodalSwitch != null) {
             disableRewordingForMultimodalSwitch.setVisibility(position == 3 ? View.VISIBLE : View.GONE);
